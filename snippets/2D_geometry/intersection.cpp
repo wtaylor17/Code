@@ -35,7 +35,7 @@ vector<point> intersection(line a, circle c) {
 	a.b -= a.a;
 	point m = a.b * real(c.c / a.b);
 	double d2 = norm(m - c.c);
-	if (d2 > sq(c.r)) return 0;
+	if (d2 > sq(c.r)) return inter;
 	double l = sqrt((sq(c.r) - d2) / norm(a.b));
 	inter.push_back(a.a + m + l * a.b);
 	if (abs(l) > EPS) inter.push_back(a.a + m - l * a.b);
