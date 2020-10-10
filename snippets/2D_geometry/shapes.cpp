@@ -79,6 +79,7 @@ bool doesFitInside(rectangle a, rectangle b) {
 // negative area = CCW, positive = CW
 double area(polygon a) {
 	double area = 0.0; int n = a.points.size();
+	if(n <= 2) return area;
 	for (int i = 0, j = 1; i < n; i++, j = (j + 1) % n)
 		area += (real(a.points[j]-a.points[i]))*(imag(a.points[j]+a.points[i]));
 	return area / 2.0;
